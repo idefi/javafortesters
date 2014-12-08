@@ -1,6 +1,7 @@
 package com.example.tests;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
@@ -14,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import static org.testng.Assert.*;
 
 public class TestBase {
 
@@ -29,14 +31,13 @@ public class TestBase {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
 
-	@AfterTest 
+	@AfterTest  
 	public void tearDown() throws Exception {
 	    driver.quit();
 	    String verificationErrorString = verificationErrors.toString();
-	    /*
 	    if (!"".equals(verificationErrorString)) {
 	    	fail(verificationErrorString);
-	    } */
+	    } 
 	  }
 	
 	protected void returnToGroupsPage() {
