@@ -1,9 +1,6 @@
 package com.example.tests;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-
+import com.example.fw.ApplicationManager;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -13,13 +10,18 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import static org.testng.Assert.*;
 
 public class TestBase {
 
-	private static WebDriver driver;
+	protected ApplicationManager app;
+	public static WebDriver driver;
 	private static String baseUrl;
 	private static boolean acceptNextAlert = true;
 	private static StringBuffer verificationErrors = new StringBuffer();
@@ -39,14 +41,6 @@ public class TestBase {
 	    	fail(verificationErrorString);
 	    } 
 	  }
-	
-	protected void returnToGroupsPage() {
-	    driver.findElement(By.linkText("group page")).click();
-	}
-
-	protected void submitGroupCreation() {
-	    driver.findElement(By.name("submit")).click();
-	}
 
 	protected void fillGroupForm(GroupData group) {
 	    driver.findElement(By.name("group_name")).clear();
@@ -68,7 +62,6 @@ public class TestBase {
 	protected void openMainPage() {
 	    driver.get(baseUrl + "/addressbookv4.1.4/");
 	}
-
 
 	protected void initContactCreation() {
 	    driver.findElement(By.linkText("add new")).click();
@@ -101,7 +94,6 @@ public class TestBase {
  //   driver.findElement(By.name("phone2")).clear();
     driver.findElement(By.name("phone2")).sendKeys(contact.phone2);
 	}
-	
 
 	protected void submitContactCreation() {
 	    driver.findElement(By.name("submit")).click();
