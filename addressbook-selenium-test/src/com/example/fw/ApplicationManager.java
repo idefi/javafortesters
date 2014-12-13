@@ -1,21 +1,35 @@
 package com.example.fw;
 
-import com.example.tests.GroupCreationTests;
-import com.example.tests.TestBase;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.concurrent.TimeUnit;
+
 
 /**
- * Created by nyu on 13.12.2014.
+ * Created by idefi on 13.12.2014.
  */
+
 public class ApplicationManager {
-    public void returnToGroupsPage() {
-        TestBase.driver.findElement(By.linkText("group page")).click();
+
+    public WebDriver driver;
+    public String baseUrl;
+    public NavigationHelper navigationHelper;
+    public GroupHelper groupHelper;
+    public ContactHelper contactHelper;
+
+    public ApplicationManager() {
+        driver = new FirefoxDriver();
+        baseUrl = "http://localhost/";
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        navigationHelper = new NavigationHelper(this);
+        groupHelper = new GroupHelper(this);
+        contactHelper = new ContactHelper(this);
     }
 
-    public void returnToGroupsPage(GroupCreationTests groupCreationTests) {
+
+    public void stop() {
+        driver.quit();
     }
 
-    public void submitGroupCreation() {
-        TestBase.driver.findElement(By.name("submit")).click();
-    }
 }
