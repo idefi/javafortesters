@@ -22,10 +22,10 @@ public class ContactCreationTests extends TestBase {
     contact.byear="1999";
     contact.new_group="1";
     contact.address2="address2";
-    contact.firstname="phone2";
+    contact.phone2="phone2";
     app.getContactHelper().fillContactForm(contact);
     app.getContactHelper().submitContactCreation();
-    app.getNavigationHelper().openHomePage();
+    app.getNavigationHelper().openMainPage();
   }
 
 }
