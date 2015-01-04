@@ -1,7 +1,12 @@
 package com.example.fw;
 
 import com.example.tests.ContactData;
+import com.example.tests.GroupData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
     public ContactHelper(ApplicationManager manager) {
@@ -35,10 +40,10 @@ public class ContactHelper extends HelperBase {
 
     public void initContactModification(int index) {
         selectContactByIndex(index);
-        click(By.xpath("(//td[@class='center']/a[contains(@href,'edit.php')])[" + index + "]"));
+        click(By.xpath("(//td[@class='center']/a[contains(@href,'edit.php')])[" + index+1 + "]"));
     }
     private void selectContactByIndex(int index) {
-        click(By.xpath("//input[@name='selected[]'][" + index + "]"));
+        click(By.xpath("//input[@name='selected[]'][" + index+1 + "]"));
         }
 
         public void submitContactModification() {
@@ -49,6 +54,15 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//input[@value='Delete']"));
         }
 
-
+    public List<ContactData> getContacts() {
+        List<ContactData> contacts = new ArrayList<ContactData>();
+        List<WebElement> entries = driver.findElements(By.name("entry"));
+        for (WebElement entry : entries) {
+            ContactData contact = new ContactData();
+            contact.firstname = entry.findElement(By.xpath(".//td[3]")).getText();
+            contact.lastname = entry.findElement(By.xpath(".//td[2]")).getText();
+            contacts.add(contact);
+        }
+        return contacts;
     }
-
+    }
