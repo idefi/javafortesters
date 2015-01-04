@@ -91,7 +91,7 @@ Driver info: driver.version: unknown
         <test-method status="PASS" signature="testNonEmptyGroupCreation()[pri:0, instance:com.example.tests.GroupCreationTests@6979e8cb]" name="testNonEmptyGroupCreation" duration-ms="2313" started-at="2014-12-08T22:19:20Z" finished-at="2014-12-08T22:19:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testNonEmptyGroupCreation -->
+        </test-method> <!-- testGroupCreationWithValidData -->
         <test-method status="PASS" signature="tearDown()[pri:0, instance:com.example.tests.GroupCreationTests@6979e8cb]" name="tearDown" is-config="true" duration-ms="112" started-at="2014-12-08T22:19:22Z" finished-at="2014-12-08T22:19:22Z">
           <reporter-output>
           </reporter-output>
