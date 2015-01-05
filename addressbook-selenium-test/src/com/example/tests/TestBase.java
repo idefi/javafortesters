@@ -75,6 +75,6 @@ public class TestBase {
 	public String generateRandomMonth() {
 		Random rnd = new Random();
 		List<String> monthNames = Arrays.asList("-", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-		return monthNames.get(rnd.nextInt(monthNames.size()+1));
+		return monthNames.get(rnd.nextInt(monthNames.size()));
 	}
 }

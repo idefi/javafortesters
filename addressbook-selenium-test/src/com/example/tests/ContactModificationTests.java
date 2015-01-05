@@ -18,7 +18,7 @@ public class ContactModificationTests extends TestBase {
         List<ContactData> oldList = app.getContactHelper().getContacts();
 
         Random rnd = new Random();
-        int index = rnd.nextInt(oldList.size()-1);
+        int index = rnd.nextInt(oldList.size());
 
         //actions
         app.getContactHelper().initContactModification(index);
@@ -32,6 +32,7 @@ public class ContactModificationTests extends TestBase {
         //compare states
         oldList.set(index, contact);
         Collections.sort(oldList);
+        Collections.sort(newList);
         assertEquals(newList, oldList);
     }
 }
