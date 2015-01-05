@@ -1,7 +1,6 @@
 package com.example.fw;
 
 import com.example.tests.ContactData;
-import com.example.tests.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -39,11 +38,10 @@ public class ContactHelper extends HelperBase {
     }
 
     public void initContactModification(int index) {
-        selectContactByIndex(index);
-        click(By.xpath("(//td[@class='center']/a[contains(@href,'edit.php')])[" + index+1 + "]"));
+        click(By.xpath("(//td[@class='center']/a[contains(@href,'edit.php')])[" + (index+1) + "]"));
     }
     private void selectContactByIndex(int index) {
-        click(By.xpath("//input[@name='selected[]'][" + index+1 + "]"));
+        click(By.xpath("//input[@name='selected[]'][" + (index+1) + "]"));
         }
 
         public void submitContactModification() {
@@ -64,5 +62,18 @@ public class ContactHelper extends HelperBase {
             contacts.add(contact);
         }
         return contacts;
+    }
+
+    public String getMonth(int index) {
+        List<String> months = new ArrayList<String>();
+        List<WebElement> rows = driver.findElements(By.xpath("//select[@name='bmonth']/option[@value]"));
+        System.out.println("Test number of elements: " + rows.size());
+        for (WebElement row : rows) {
+            String month;
+            month = row.findElement(By.xpath(".//td[3]")).getText();
+            months.add(month);
+        }
+
+        return months.get(index);
     }
     }

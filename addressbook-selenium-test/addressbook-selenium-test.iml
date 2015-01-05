@@ -10,5 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="library" name="Selenium" level="project" />
     <orderEntry type="library" name="selenium-server-standalone-2.44.0" level="project" />
+    <orderEntry type="library" name="selenium-server-standalone-2.44.0 (1)" level="project" />
   </component>
 </module>

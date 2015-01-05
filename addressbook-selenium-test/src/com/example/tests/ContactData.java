@@ -65,13 +65,10 @@ public ContactData() {
 
 	@Override
 	public int compareTo(ContactData other) {
-		/*return ComparisonChain.start()
-				.compare(firstname, other.firstname)
-				.compare(lastname, other.lastname)
-				.result();*/
-		return this.lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
-
+		int result = lastname.toLowerCase().compareTo(other.lastname.toLowerCase());
+		if ( result == 0 ) {
+			result = firstname.toLowerCase().compareTo(other.firstname.toLowerCase());
+		}
+		return result;
 	}
-
-
 }

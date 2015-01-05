@@ -1,7 +1,10 @@
 package com.example.fw;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -14,6 +17,7 @@ public class ApplicationManager {
 
     public ApplicationManager() {
         driver = new FirefoxDriver();
+        //HtmlUnitDriver driver = new HtmlUnitDriver(BrowserVersion.CHROME);
         baseUrl = "http://localhost/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }

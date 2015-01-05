@@ -5,10 +5,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class TestBase {
 
@@ -33,12 +30,35 @@ public class TestBase {
 			group.header = generateRandomString();
 			group.footer = generateRandomString();
 			list.add(new Object[]{group});
-
 		}
 		return list.iterator();
 	}
 
-	public String generateRandomString (){
+	@DataProvider
+	public Iterator<Object[]> randomValidContactGenerator() {
+		List<Object[]> list = new ArrayList<Object[]>();
+		for (int i=0; i<5; i++ ){
+			ContactData contact = new ContactData();
+			contact.firstname=generateRandomString();
+			contact.lastname=generateRandomString();
+			contact.address=generateRandomString();
+			contact.home=generateRandomString();
+			contact.mobile=generateRandomString();
+			contact.work=generateRandomString();
+			contact.email=generateRandomString();
+			contact.email2=generateRandomString();
+			contact.bday=generateRandomInt(1, 31);
+			contact.bmonth=generateRandomMonth();
+			contact.byear=generateRandomInt(1900, 2015);
+			contact.new_group="1";
+			contact.address2=generateRandomString();
+			contact.phone2=generateRandomString();
+			list.add(new Object[]{contact});
+		}
+		return list.iterator();
+	}
+
+	public String generateRandomString(){
 		Random rnd = new Random();
 		if (rnd.nextInt(3) == 0 ) {
 			return ""; }
@@ -47,4 +67,14 @@ public class TestBase {
 		}
 	}
 
+	public static String generateRandomInt(int min, int max) {
+		Random rnd = new Random();
+			return String.valueOf(rnd.nextInt((max - min) + 1) + min);
+	}
+
+	public String generateRandomMonth() {
+		Random rnd = new Random();
+		List<String> monthNames = Arrays.asList("-", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+		return monthNames.get(rnd.nextInt(monthNames.size()+1));
+	}
 }
