@@ -25,10 +25,10 @@ public class TestBase {
 	public Iterator<Object[]> randomValidGroupGenerator() {
 		List<Object[]> list = new ArrayList<Object[]>();
 		for (int i=0; i<5; i++ ){
-			GroupData group = new GroupData();
-			group.name = generateRandomString();
-			group.header = generateRandomString();
-			group.footer = generateRandomString();
+			GroupData group = new GroupData()
+					.withName(generateRandomString())
+					.withHeader(generateRandomString())
+					.withFooter(generateRandomString());
 			list.add(new Object[]{group});
 		}
 		return list.iterator();
@@ -37,22 +37,22 @@ public class TestBase {
 	@DataProvider
 	public Iterator<Object[]> randomValidContactGenerator() {
 		List<Object[]> list = new ArrayList<Object[]>();
-		for (int i=0; i<5; i++ ){
-			ContactData contact = new ContactData();
-			contact.firstname=generateRandomString();
-			contact.lastname=generateRandomString();
-			contact.address=generateRandomString();
-			contact.home=generateRandomString();
-			contact.mobile=generateRandomString();
-			contact.work=generateRandomString();
-			contact.email=generateRandomString();
-			contact.email2=generateRandomString();
-			contact.bday=generateRandomInt(1, 31);
-			contact.bmonth=generateRandomMonth();
-			contact.byear=generateRandomInt(1900, 2015);
-			contact.new_group="1";
-			contact.address2=generateRandomString();
-			contact.phone2=generateRandomString();
+		for (int i=0; i<3; i++ ){
+			ContactData contact = new ContactData()
+				.withFirstname(generateRandomString())
+				.withLastname(generateRandomString())
+				.withAddress(generateRandomString())
+				.withHome(generateRandomString())
+				.withMobile(generateRandomString())
+				.withWork(generateRandomString())
+				.withEmail(generateRandomString())
+				.withEmail2(generateRandomString())
+				.withBday(generateRandomInt(1, 31))
+				.withBmonth(generateRandomMonth())
+				.withByear(generateRandomInt(1900, 2015))
+				//.withNew_group("1")
+				.withAddress2(generateRandomString())
+				.withPhone2(generateRandomString());
 			list.add(new Object[]{contact});
 		}
 		return list.iterator();
