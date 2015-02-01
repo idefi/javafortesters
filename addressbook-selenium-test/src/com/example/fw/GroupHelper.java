@@ -18,7 +18,7 @@ public class GroupHelper extends HelperBase {
         if (cachedGroups == null) {
             rebuildCache();
         }
-        return cachedGroups;
+        return new SortedListOf<GroupData>(cachedGroups);
     }
 
     private void rebuildCache() {
@@ -44,7 +44,7 @@ public class GroupHelper extends HelperBase {
     public GroupHelper deleteGroup(int index) {
         selectGroupByIndex(index);
         submitGroupDeletion();
-//        rebuildCache();
+        rebuildCache();
         return this;
     }
 
