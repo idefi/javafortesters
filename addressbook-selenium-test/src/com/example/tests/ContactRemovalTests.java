@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class ContactRemovalTests extends TestBase {
 
     @Test
-    public void deleteSomeContact () {
+    public void deleteSomeContact() {
 
         //save old state
         SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();

@@ -8,10 +8,10 @@ import java.util.Random;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
-public class GroupRemovalTests extends TestBase{
+public class GroupRemovalTests extends TestBase {
 
     @Test
-    public void deleteSomeGroup (){
+    public void deleteSomeGroup() {
 
         //save old state
         SortedListOf<GroupData> oldList = app.getGroupHelper().getGroups();
@@ -22,7 +22,7 @@ public class GroupRemovalTests extends TestBase{
         app.getGroupHelper().deleteGroup(index);
 
         //save new state
-        SortedListOf <GroupData> newList = app.getGroupHelper().getGroups();
+        SortedListOf<GroupData> newList = app.getGroupHelper().getGroups();
 
         //compare states
         assertThat(newList, equalTo(oldList.without(index)));

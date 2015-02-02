@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class ContactModificationTests extends TestBase {
 
     @Test(dataProvider = "randomValidContactGenerator")
-    public void modifySomeGroup (ContactData contact) throws Exception {
+    public void modifySomeGroup(ContactData contact) throws Exception {
 
         //save old state
         SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();

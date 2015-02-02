@@ -8,19 +8,19 @@ import static org.junit.Assert.assertThat;
 
 public class ContactCreationTests extends TestBase {
 
-	@Test(dataProvider = "randomValidContactGenerator")
-  public void testNonEmptyContactCreation(ContactData contact) throws Exception {
+    @Test(dataProvider = "randomValidContactGenerator")
+    public void testNonEmptyContactCreation(ContactData contact) throws Exception {
 
-     //save old state
+        //save old state
         SortedListOf<ContactData> oldList = app.getContactHelper().getContacts();
 
-     //actions
-      app.getContactHelper().createContact(contact);
+        //actions
+        app.getContactHelper().createContact(contact);
 
-     //save new state
+        //save new state
         SortedListOf<ContactData> newList = app.getContactHelper().getContacts();
 
-      //compare states
-    assertThat(newList, equalTo(oldList.withAdded(contact)));
-  }
+        //compare states
+        assertThat(newList, equalTo(oldList.withAdded(contact)));
+    }
 }
