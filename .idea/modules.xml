@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/addressbook-selenium-test/addressbook-selenium-test.iml" filepath="$PROJECT_DIR$/addressbook-selenium-test/addressbook-selenium-test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/thinkinginjava/thinkinginjava.iml" filepath="$PROJECT_DIR$/thinkinginjava/thinkinginjava.iml" />
     </modules>
   </component>
 </project>

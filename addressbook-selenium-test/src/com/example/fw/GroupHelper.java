@@ -8,11 +8,11 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class GroupHelper extends HelperBase {
+    private SortedListOf<GroupData> cachedGroups;
+
     public GroupHelper(ApplicationManager manager) {
         super(manager);
     }
-
-    private SortedListOf<GroupData> cachedGroups;
 
     public SortedListOf<GroupData> getGroups() {
         if (cachedGroups == null) {
@@ -29,8 +29,8 @@ public class GroupHelper extends HelperBase {
             String title = checkbox.getAttribute("title");
             String name = title.substring("Select (".length(), title.length() - ")".length());
             cachedGroups.add(new GroupData().withName(name));
-            }
         }
+    }
 
     public GroupHelper createGroup(GroupData group) {
         manager.navigateTo().groupsPage();
@@ -82,7 +82,7 @@ public class GroupHelper extends HelperBase {
     }
 
     private GroupHelper selectGroupByIndex(int index) {
-        click(By.xpath("//input[@name='selected[]'][" + (index+1) + "]"));
+        click(By.xpath("//input[@name='selected[]'][" + (index + 1) + "]"));
         return this;
     }
 

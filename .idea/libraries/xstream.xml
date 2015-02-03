@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="xstream">
+    <CLASSES>
+      <root url="jar://D:/Dropbox/tools/Java/xstream-distribution-1.4.7-bin/xstream-1.4.7/lib/xstream-1.4.7.jar!/" />
+      <root url="file://D:/Dropbox/tools/Java/xstream-distribution-1.4.7-bin/xstream-1.4.7/lib" />
+      <root url="jar://D:/Dropbox/tools/Java/xstream-distribution-1.4.7-bin/xstream-1.4.7/lib/xstream/xpp3_min-1.1.4c.jar!/" />
+      <root url="jar://D:/Dropbox/tools/Java/xstream-distribution-1.4.7-bin/xstream-1.4.7/lib/xstream/kxml2-2.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/Dropbox/tools/Java/xstream-distribution-1.4.7-bin/xstream-1.4.7/lib" recursive="false" />
+  </library>
+</component>
