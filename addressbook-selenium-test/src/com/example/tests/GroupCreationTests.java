@@ -19,7 +19,6 @@ public class GroupCreationTests extends TestBase {
         return wrapGroupsForDataProvider(loadGroupsFromXmlFile(new File("groups.xml"))).iterator();
     }
 
-
     @Test(dataProvider = "groupsFromFile")
     public void testGroupCreationWithValidData(GroupData group) throws Exception {
 

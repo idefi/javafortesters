@@ -32,7 +32,7 @@ public class TestBase {
     @BeforeTest
     public void setUp() throws Exception {
         Properties properties = new Properties();
-        properties.load(new FileReader(new File("application.properties")));
+        properties.load(new FileReader(new File("D:\\GitHub\\javafortesters\\addressbook-selenium-test\\src\\application.properties")));
         app = new ApplicationManager(properties);
     }
 
