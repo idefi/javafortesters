@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/../out/test/addressbook-selenium-test"/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<levels>
+		<level name="Selenium" value="project"/>
+		<level name="selenium-server-standalone-2.44.0" value="project"/>
+		<level name="xstream" value="project"/>
+	</levels>
+</component>
