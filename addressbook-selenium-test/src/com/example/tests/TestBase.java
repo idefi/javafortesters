@@ -38,9 +38,9 @@ public class TestBase {
 
     @BeforeTest
     public void setUp() throws Exception {
-        String configFile = System.getProperty("configFile", "D:\\GitHub\\javafortesters\\addressbook-selenium-test\\src\\application.properties");
+        String configFile = System.getProperty("configFile", "application.properties");
         Properties properties = new Properties();
-        properties.load(new FileReader(new File("D:\\GitHub\\javafortesters\\addressbook-selenium-test\\src\\application.properties")));
+        properties.load(new FileReader(new File(configFile)));
         app = new ApplicationManager(properties);
     }
 
